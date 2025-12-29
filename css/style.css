@@ -6,7 +6,6 @@
   --color-link: #525252;
   --color-text: #525252;
   --color-border-project: #adadab;
-  --color-selected-project: #171717;
 }
 
 body {
@@ -90,15 +89,20 @@ h4 {
   width: 15px;
 }
 
-.menu a:hover {
+.menu a:hover:not(.ativo) {
   font-weight: bold;
   left: 20px;
   transition: all 0.3s;
 }
 
-.menu a:hover::before {
+.menu a:hover:not(.ativo)::before {
   opacity: 1;
   left: -20px;
+}
+
+.ativo {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .social-links ul {
@@ -158,6 +162,7 @@ h4 {
 .knowledge li {
   background: var(--color-bg-items);
   border-radius: 4px;
+  color: var(--color-link);
   text-transform: uppercase;
   padding: 3px 15px;
 }
@@ -182,21 +187,21 @@ h4 {
 }
 
 .project li {
-  background-color: var(--color-link);
+  background-color: var(--color-bg-items);
   border-radius: 4px;
-  color: #fff;
+  color: var(--color-link);
   display: inline-block;
   padding: 5px 15px;
 }
 
 .project:hover {
-  background: #fff;
-  border: 1px dashed var(--color-selected-project);
+  background: var(--color-bg-items);
+  border: 1px solid transparent;
 }
 
 .project:hover li {
-  background-color: var(--color-bg-items);
-  color: var(--color-link);
+  background-color: var(--color-link);
+  color: #fff;
 }
 
 .experience {
@@ -208,9 +213,9 @@ h4 {
 }
 
 .experience time {
-  background: var(--color-border-project);
+  background: var(--color-bg-items);
   border-radius: 0 0 15px 0;
-  color: #fff;
+  color: var(--color-link);
   left: -1px;
   padding: 3px 20px;
   position: absolute;
