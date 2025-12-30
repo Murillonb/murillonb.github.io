@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Verifica se o link não é apenas "#" e se o alvo existe
       if (id !== "#" && id.startsWith("#")) {
         const target = document.querySelector(id);
-        
+
         if (target) {
           e.preventDefault(); // Só cancela o clique se o alvo existir
           target.scrollIntoView({
@@ -28,3 +28,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll('a[href^="#"]');
+
+const observerOptions = {
+  // Adjust threshold: 0.3 means the section must take up 30% of the viewport
+  threshold: 0.3,
+  // RootMargin can help trigger the change earlier or later
+  // rootMargin: "-30% 0px -30% 0px"??????????????????????????????????????
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute("id");
+      // Update all links
+      navLinks.forEach((link) => {
+        // We check if the href matches the section id (e.g., "#about" === "#about")
+        const isActive = link.getAttribute("href") === `#${id}`;
+        link.classList.toggle("ativo", isActive);
+      });
+    }
+  });
+}, observerOptions);
+
+sections.forEach((section) => observer.observe(section));

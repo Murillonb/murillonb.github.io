@@ -63,7 +63,8 @@ h4 {
 
 .sidebar {
   display: grid;
-  padding: 90px;
+  flex: 1;
+  padding: 90px 50px 90px 90px;
 }
 
 .menu {
@@ -139,9 +140,7 @@ h4 {
   width: 70%;
 }
 
-#about,
-#projects,
-#experiences {
+.content > section {
   scroll-margin-top: 90px;
   margin-top: 90px;
 }
@@ -229,14 +228,90 @@ h4 {
   margin-bottom: 10px;
 }
 
-.experience ul {
-  list-style-position: inside;
-}
-
 .experience li {
   color: var(--color-text);
   font-size: 1rem;
   font-weight: 300;
   list-style: disc;
   margin-left: 20px;
+}
+
+@media (max-width: 1200px) {
+  .sidebar {
+    padding-right: 20px;
+  }
+  .content {
+    padding-left: 20px;
+  }
+  #about p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    padding-left: 45px;
+    padding-right: 15px;
+  }
+  .content {
+    padding-left: 15px;
+    padding-right: 45px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: grid;
+  }
+  .sidebar {
+    padding: 20px 60px;
+    text-align: right;
+  }
+  .sidebar .menu {
+    display: none;
+  }
+  .sidebar .social-links {
+    position: absolute;
+  }
+  .content {
+    padding: 0 60px;
+  }
+  .content section:first-child {
+    margin-top: 0px;
+  }
+  .content section:not(first-child) {
+    margin-top: 50px;
+  }
+  .content h2 {
+    background-color: var(--color-bg);
+    font-size: 1.3rem;
+    position: sticky;
+    padding: 20px 0;
+    top: 0px;
+    z-index: 2;
+  }
+  .content h2::before {
+    background-color: var(--color-border-project);
+    height: 1px;
+    top: 68px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    background-color: var(--color-bg-items);
+  }
+  .sidebar .social-links {
+    justify-items: right;
+    padding-top: 20px;
+    position: relative;
+  }
+  .sidebar .social-links img:hover {
+    background-color: var(--color-bg);
+  }
+  .project {
+    gap:15px;
+    grid-template-columns: 1fr;
+  }
 }
