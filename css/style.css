@@ -33,6 +33,10 @@ a {
   text-decoration: none;
 }
 
+strong {
+  font-weight: bold;
+}
+
 h1 {
   color: var(--color-name);
   font-size: 2rem;
@@ -64,7 +68,7 @@ h4 {
 .sidebar {
   display: grid;
   flex: 1;
-  padding: 90px 50px 90px 90px;
+  padding: 90px 20px 90px 90px;
 }
 
 .menu {
@@ -147,8 +151,9 @@ h4 {
 
 #about p {
   color: var(--color-text);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
+  line-height: 1.5rem;
   margin-bottom: 15px;
 }
 
@@ -170,16 +175,22 @@ h4 {
   border: 1px dashed var(--color-border-project);
   border-radius: 6px;
   display: grid;
+  gap: 0 25px;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 30px;
   padding: 15px 40px;
 }
 
 .project img {
+  border: 3px solid var(--color-bg-items);
+  border-radius: 4px;
+  display: block;
   grid-column: 1 / 2;
+  max-width: 100%;
 }
 
 .project ul {
+  align-content: start;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -189,7 +200,6 @@ h4 {
   background-color: var(--color-bg-items);
   border-radius: 4px;
   color: var(--color-link);
-  display: inline-block;
   padding: 5px 15px;
 }
 
@@ -198,8 +208,12 @@ h4 {
   border: 1px solid transparent;
 }
 
+.project:hover img {
+  border: 3px solid var(--color-border-project);
+}
+
 .project:hover li {
-  background-color: var(--color-link);
+  background-color: var(--color-border-project);
   color: #fff;
 }
 
