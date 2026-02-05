@@ -1,0 +1,32 @@
+.experience {
+  border: 1px dashed var(--color-border-project);
+  border-radius: 6px;
+  margin-bottom: 30px;
+  padding: 35px 40px 15px 40px;
+  position: relative;
+}
+
+.experience time {
+  background: var(--color-bg-items);
+  border-radius: 0 0 15px 0;
+  color: var(--color-link);
+  left: -1px;
+  padding: 3px 20px;
+  position: absolute;
+  top: -1px;
+}
+
+.experience p {
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.experience li {
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 300;
+  list-style: disc;
+  margin-left: 20px;
+}

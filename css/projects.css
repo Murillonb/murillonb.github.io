@@ -1,0 +1,75 @@
+.project {
+  border: 1px dashed var(--color-border-project);
+  border-radius: 6px;
+  display: grid;
+  gap: 0 25px;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 30px;
+  padding: 15px 40px;
+  position: relative;
+}
+
+.project::after {
+  content: "↗";
+  display: block;
+  position: absolute;
+  right: 15px;
+  font-size: 2rem;
+  color: var(--color-border-project);
+}
+
+.project img {
+  border: 3px solid var(--color-bg-items);
+  border-radius: 4px;
+  display: block;
+  grid-column: 1 / 2;
+  max-width: 100%;
+}
+
+.project ul {
+  align-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project li {
+  background-color: var(--color-bg-items);
+  border-radius: 4px;
+  color: var(--color-link);
+  padding: 5px 15px;
+}
+
+.project:hover {
+  background: var(--color-bg-items);
+  border: 1px solid transparent;
+}
+
+.project:hover::after {
+  animation: arrow-animation 0.3s forwards;
+}
+
+@keyframes arrow-animation {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(5px, -5px, 0);
+  }
+}
+
+.project:hover img {
+  border: 3px solid var(--color-border-project);
+}
+
+.project:hover li {
+  background-color: var(--color-border-project);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .project {
+    gap: 15px;
+    grid-template-columns: 1fr;
+  }
+}
