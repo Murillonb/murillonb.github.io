@@ -21,13 +21,15 @@
   width: 15px;
 }
 
-.menu a:hover:not(.ativo) {
+.menu a:hover:not(.active),
+.menu a.active {
   font-weight: bold;
   left: 20px;
   transition: all 0.3s;
 }
 
-.menu a:hover:not(.ativo)::before {
+.menu a:hover:not(.active)::before,
+.menu a.active::before {
   opacity: 1;
   left: -20px;
 }

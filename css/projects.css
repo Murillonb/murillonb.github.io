@@ -15,7 +15,7 @@
   position: absolute;
   right: 15px;
   font-size: 2rem;
-  color: var(--color-border-project);
+  color: var(--color-link);
 }
 
 .project img {
