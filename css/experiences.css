@@ -46,3 +46,9 @@
   color: var(--color-link);
   padding: 5px 15px;
 }
+
+@media (max-width: 550px) {
+  .experience {
+    padding: 35px 20px;
+  }
+}

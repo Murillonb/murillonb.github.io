@@ -24,6 +24,7 @@
   display: block;
   grid-column: 1 / 2;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .project ul {
@@ -67,9 +68,14 @@
   color: #fff;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
   .project {
     gap: 15px;
     grid-template-columns: 1fr;
+    padding: 15px 20px;
+  }
+
+  .project h4 {
+    margin-bottom: 0px;
   }
 }
